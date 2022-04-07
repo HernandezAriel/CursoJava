@@ -22,7 +22,7 @@ public class Vehiculo {
     }
 
     public void acelerar(int a){
-       this.velocidad=+a;
+        setVelocidad(a);
     }
 
     @Override
