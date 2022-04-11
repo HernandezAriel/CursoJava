@@ -9,7 +9,9 @@ public class Carga extends Vehiculo{
     }
 
     public void ponRemolque(Remolque r){
-        this.rem = r;
+        if(getVelocidad()<100)this.rem = r;
+        else System.out.println("Va muy rapido!");
+
     }
 
     public String quitaRemolque(){
@@ -34,11 +36,21 @@ public class Carga extends Vehiculo{
                 System.out.println("No se puede ir tan rapido con un remolque!");
             }
             else{
-                setVelocidad(a);
+                super.acelerar(a);
             }
         }
+        super.acelerar(a);
     }
-
+    /*
+    @Override
+    public class DemasiadoRapidoException extends Exception{
+        public DemasiadoRapidoException(){
+        }
+        public DemasiadoRapidoException(String mensaje){
+            super(mensaje);
+    }
+*/
+    @Override
     public String toString(){
         String def;
         if(rem!=null) def = rem.toString();

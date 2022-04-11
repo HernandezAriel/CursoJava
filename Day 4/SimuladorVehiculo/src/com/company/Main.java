@@ -10,63 +10,70 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //MAIN harcodeado probando todas las funcionalidades.
-        Particular p1 = new Particular("ASD123", 4);
-        Carga c1 = new Carga("QWE345");
-        Remolque r1 = new Remolque(50);
-
-        System.out.println(p1.getNumPuertas());
-        p1.acelerar(20);
-        System.out.println(p1.getVelocidad());
-        System.out.println(p1.toString());
-
-        c1.acelerar(30);
-        c1.quitaRemolque();
-        c1.ponRemolque(r1);
-        //System.out.println(c1.quitaRemolque());
-        System.out.println(c1.toString());
-        c1.acelerar(40);
-
-/*
-        ArrayList<Particular>particulares = new ArrayList<>();
-        ArrayList<Carga>cargas = new ArrayList<>();
+        ArrayList<Particular> particulares = new ArrayList<>();
+        ArrayList<Carga> cargas = new ArrayList<>();
 
 
         System.out.println("--------------------------Simulador de Vehiculos--------------------------");
         boolean exit = false;
         int op;
 
-        while(!exit){
+        while (!exit) {
             System.out.println("1. Cargar vehiculo particular.");
             System.out.println("2. Cargar vehiculo de carga.");
             System.out.println("3. Acelerar vehiculo.");
             System.out.println("4. Agregar remolque a vehiculo de carga.");
-            System.out.println("4. Quitar remolque a vehiculo de carga.");
-            System.out.println("5. Mostrar vehiculo.");
-            System.out.println("6. Mostrar todos.");
+            System.out.println("5. Quitar remolque a vehiculo de carga.");
+            System.out.println("6. Mostrar vehiculo.");
             System.out.println("7. Salir.");
             op = sc.nextInt();
 
-            switch (op){
-                case 1: particulares.add(cargarParticular());
-                break;
-                case 2: cargas.add(cargarCarga());
-                break;
+            switch (op) {
+                case 1:
+                    particulares.add(cargarParticular());
+                    break;
+                case 2:
+                    cargas.add(cargarCarga());
+                    break;
                 case 3:
-                        Vehiculo aux = buscarVehiculo(particulares, cargas);
-                        System.out.println("Cuanto quiere acelerar?: ");
-                        int acelerar = sc.nextInt();
-                        aux.acelerar(acelerar);
-                break;
-                case 4: Vehiculo aux2 = buscarVehiculo(particulares, cargas);
-                        aux2.toString();
-                }
-
-
+                    Vehiculo aux = buscarVehiculo(particulares, cargas);
+                    System.out.println("Cuanto quiere acelerar?: ");
+                    int acelerar = sc.nextInt();
+                    aux.acelerar(acelerar);
+                    break;
+                case 4:
+                    System.out.println("Ingrese matricula: ");
+                    sc.nextLine();
+                    String matricula = sc.nextLine();
+                    for (Carga p : cargas) {
+                        if (p.getMatricula().equals(matricula)) {
+                            p.ponRemolque(crearRemolque());
+                        }
+                    }
+                    break;
+                case 5:
+                    System.out.println("Ingrese matricula: ");
+                    sc.nextLine();
+                    String matricula1 = sc.nextLine();
+                    for (Carga p : cargas) {
+                        if (p.getMatricula().equals(matricula1)) p.quitaRemolque();
+                        else System.out.println("No existe el vehiculo");
+                    }
+                    break;
+                case 6:
+                    Vehiculo aux1 = buscarVehiculo(particulares, cargas);
+                    System.out.println(aux1.toString());
+                    break;
+                case 7:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Opcion incorrecta");
+            }
         }
     }
 
-    public static Particular cargarParticular(){
+    public static Particular cargarParticular() {
         System.out.println("Ingrese matricula: ");
         sc.nextLine();
         String matricula = sc.nextLine();
@@ -76,7 +83,7 @@ public class Main {
         return p;
     }
 
-    public static Carga cargarCarga(){
+    public static Carga cargarCarga() {
         System.out.println("Ingrese matricula: ");
         sc.nextLine();
         String matricula = sc.nextLine();
@@ -84,25 +91,35 @@ public class Main {
         return c;
     }
 
-    public static Vehiculo buscarVehiculo(ArrayList<Particular> particulares, ArrayList<Carga> cargas){
+    public static Vehiculo buscarVehiculo(ArrayList<Particular> particulares, ArrayList<Carga> cargas) {
 
         System.out.println("Ingrese matricula: ");
         sc.nextLine();
         String matricula = sc.nextLine();
 
         Vehiculo aux = null;
-        for(Particular p: particulares) {
+        for (Particular p : particulares) {
             if (p.getMatricula().equals(matricula)) {
                 aux = p;
+                break;
             }
         }
 
-        for(Carga c: cargas) {
+        for (Carga c : cargas) {
             if (c.getMatricula().equals(matricula)) {
                 aux = c;
             }
         }
         return aux;
-    }*/
+    }
+
+    public static Remolque crearRemolque() {
+        System.out.println("Ingrese preso del remolque");
+        int peso = sc.nextInt();
+        Remolque r = new Remolque(peso);
+        return r;
     }
 }
+
+
+

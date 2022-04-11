@@ -1,14 +1,13 @@
 package com.company;
-
 import java.util.Scanner;
 
 public class Game {
 
+    private int tries = 6;
+    private String[] word;
 
-    private int tries;
-
-    public Game(int tries){
-        this.tries = tries;
+    public Game(String[] word){
+        
     }
 
     public void startGame(Player p1, Player p2){
