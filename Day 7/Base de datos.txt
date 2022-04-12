@@ -1,0 +1,12 @@
+use facultad_db;
+/*
+create table datos_personales(
+	dni int not null unique,
+    nombre varchar(45) not null,
+    apellido varchar(45) not null,
+    telefono varchar(12) not null
+);*/
+select dni, telefono from datos_personales;
+insert into datos_personales
+ values(33323434, "Carlos", "Bult", "324446543");
+insert into datos_personales(telefono, dni, apellido, nombre)
