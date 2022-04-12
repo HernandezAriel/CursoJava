@@ -14,7 +14,7 @@ public class Logger {
         }
         return log;
     }
-
+\\
     public void setValue(String msg){
         this.value = msg;
     }
