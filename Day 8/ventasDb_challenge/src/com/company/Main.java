@@ -16,6 +16,7 @@ public class Main {
 
         dbc.insertVendor(vendor);
         dbc.insertClient(client);
+        
 
 
     }
