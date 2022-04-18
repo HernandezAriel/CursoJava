@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class dbControl {
 
     private Conection conection;
-    private Connection con1;
+    private Connection con;
 
     public dbControl(){
         conection = new Conection();

@@ -16,13 +16,7 @@ public class Main {
 
         dbc.insertVendor(vendor);
         dbc.insertClient(client);
-        //dbc.insertProduct(prod);
-        //dbc.insertBilling(billing);
 
-        //dbc.selectClients();
-        //dbc.selectVendors();
-        //dbc.selectProducts();
-        // dbc.selectBillings();
 
     }
 
