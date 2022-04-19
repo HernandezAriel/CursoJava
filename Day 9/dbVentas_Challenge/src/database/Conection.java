@@ -8,7 +8,7 @@ public class Conection {
 
     private String bdName = "day9";
     private String user = "root";
-    private String pass = "7634283266_Cynad";
+    private String pass = "123";
 
     private String url = "jdbc:mysql://localhost:3306/"
             +bdName +"?userUnicode=true&use"+"JDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&"
