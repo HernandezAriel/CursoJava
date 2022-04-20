@@ -27,19 +27,17 @@ public class PlayerController {
     }
 
     @GetMapping("/pos")
-    public ArrayList<Player> getPlayersByPos(@RequestParam("pos") String pos)
-    {
+    public ArrayList<Player> getPlayersByPos(@RequestParam("pos") String pos){
         return pService.getPlayersByPos(pos);
     }
 
     @DeleteMapping("/delete/{id}")
-        public void delete(@PathVariable("id") int id)
-    {
+        public void delete(@PathVariable("id") int id){
         pService.deleteById(id);
     }
+
     @PostMapping
-        public void putAlfajor(@RequestBody Player player)
-    {
+        public void putAlfajor(@RequestBody Player player){
         pService.putPlayer(player);
     }
 
