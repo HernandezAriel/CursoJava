@@ -37,7 +37,7 @@ public class PlayerController {
     }
 
     @PostMapping
-        public void putAlfajor(@RequestBody Player player){
+        public void putPlayer(@RequestBody Player player){
         pService.putPlayer(player);
     }
 
