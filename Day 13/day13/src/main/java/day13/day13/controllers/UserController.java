@@ -19,7 +19,6 @@ import day13.day13.models.User;
 import day13.day13.repositories.UserRepository;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponses;
-import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.annotations.ApiResponse;
 
 
