@@ -1,7 +1,9 @@
 package com.example.day22.controllers.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import com.example.day22.models.Student;
 
-public interface StudentRepository extends CrudRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRepository extends JpaRepository<Student, Long> {
     
 }
